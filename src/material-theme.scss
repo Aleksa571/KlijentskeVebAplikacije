@@ -11,6 +11,7 @@ html {
   @include mat.theme((
     color: (
       primary: mat.$cyan-palette,
+      
       tertiary: mat.$orange-palette,
     ),
     typography: Roboto,
