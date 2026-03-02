@@ -1,4 +1,4 @@
-@if(flights().length >0) {
+@if(flights().length > 0) {
 <div class="card-wrapper">
     @for (f of flights(); track $index){
     <mat-card class="flight-card" appearance="outlined">
@@ -13,6 +13,11 @@
             <a [routerLink]="`/details/${f.id}`" matButton>
                 <mat-icon fontIcon="description" /> Details
             </a>
+            @if (authService.getActiveUser()) {
+            <a [routerLink]="`/details/${f.id}/booking`" matButton>
+                <mat-icon fontIcon="airplane_ticket" /> Book now
+            </a>
+            }
         </mat-card-actions>
     </mat-card>
     }
@@ -20,8 +25,8 @@
 }
 @else {
 <mat-card class="loading-card">
+    <img src="/loading.webp" class="loading-img">
     <mat-card-content>
-        <img src="loading.webp" class="loading-img">
         <h3>Podaci se ucitavaju</h3>
         <p>Molimo sacekajte...</p>
     </mat-card-content>
