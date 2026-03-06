@@ -96,3 +96,14 @@ body {
     background: var(--mat-sys-on-primary) !important;
     color: var(--mat-sys-on-primary) !important;
 }
+
+.flex-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.flex-card {
+    max-width: 460px;
+}
